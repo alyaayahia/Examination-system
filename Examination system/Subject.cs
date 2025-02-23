@@ -34,17 +34,18 @@ namespace Examination_system
             Exam = choice == 1 ? new FinalExam(TimeOfExam, NumberOfQuestion) : new PracticalExam(TimeOfExam, NumberOfQuestion);
            if(choice==1)
             {
-                Console.WriteLine("the Final exam");
+                Console.WriteLine();
+                Console.WriteLine("*********The Final Exam*************");
                 for (int i=0;i< NumberOfQuestion;i++)
                 {                    
-                    Console.WriteLine("please enter the type of Question ==> (1)- true or false ,(2) MSQ ");
+                    Console.WriteLine($"please enter the type of Question {i+1} ==> (1)- true or false ,(2) MSQ ");
                     int QuestionType = int.Parse(Console.ReadLine());
                     Console.Write("Enter question text: ");
                     string body = Console.ReadLine();
                     Console.Write("Enter question mark: ");
                     int mark = int.Parse(Console.ReadLine());
                     if (QuestionType==1)
-                    {                    
+                    {
                         Console.Write("Enter correct answer (1: True, 2: False): ");
                         int correctAnswerId = int.Parse(Console.ReadLine());
                         Answers correctAnswer = new Answers(correctAnswerId, correctAnswerId == 1 ? "True" : "False");
